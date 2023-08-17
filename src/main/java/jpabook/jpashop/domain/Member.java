@@ -27,6 +27,7 @@ public class Member {
 
     private int size;
 
+    @Embedded
     private Money money;
 
 }
