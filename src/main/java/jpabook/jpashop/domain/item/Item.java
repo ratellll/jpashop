@@ -1,10 +1,13 @@
 package jpabook.jpashop.domain.item;
 
 
+import jpabook.jpashop.domain.Category;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 상속관계 매핑 전략을 설정한다.
@@ -20,5 +23,8 @@ public abstract class Item {
     private String name;
     private int price;
     private int stockQuantity;
+
+    @ManyToMany(mappedBy = "items") // 다대다 관계는 중간에 테이블을 하나 더 만들어서 관리한다.
+    private List<Category> categories = new ArrayList<>();
 
 }

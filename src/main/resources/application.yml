@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create       #실행시 테이블 생성 원래있던걸 지우고
+      ddl-auto: create      #실행시 테이블 생성 원래있던걸 지우고
     properties:
       hibernate:
      #   show_sql: true

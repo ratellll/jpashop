@@ -18,14 +18,14 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) // 다대일 관계
     @JoinColumn(name = "member_id") // 외래키
-    private Member member;
+    private Member member; // 주문 회원
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) // 주문과 주문상품은 일대다 관계
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY) // 일대일 관계
     @JoinColumn(name = "delivery_id") // 외래키
     private Delivery delivery;
 

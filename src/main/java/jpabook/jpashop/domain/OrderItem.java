@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "order_item")
 @Getter
 @Setter
 public class OrderItem {
@@ -23,7 +24,7 @@ public class OrderItem {
     private Item item;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) // 다대일 관계
     @JoinColumn(name = "order_id")
     private Order order;
 

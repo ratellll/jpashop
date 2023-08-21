@@ -22,12 +22,12 @@ public class Member {
     @Embedded // 내장 타입
     private Address address;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "member") // 읽기 전용
     private List<Order> orders = new ArrayList<>();
 
     private int size;
 
-    @Embedded
+    @Embedded // 내장 타입
     private Money money;
 
 }

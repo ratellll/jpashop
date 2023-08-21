@@ -12,10 +12,9 @@ public class Delivery {
 
     @Id @GeneratedValue
     @Column(name = "delivery_id")
-
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery", fetch = FetchType.LAZY) // 일대일 관계
     private Order order;
 
     @Embedded
