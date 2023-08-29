@@ -71,3 +71,7 @@ cascade = CascadeType.REMOVE는 영속성 전이중에 REMOVE만 전파한다는
 cascade = CascadeType.REFRESH는 영속성 전이중에 REFRESH만 전파한다는 뜻이다.
 cascade = CascadeType.DETACH는 영속성 전이중에 DETACH만 전파한다는 뜻이다.
 cascade란 연관된 엔티티를 함께 저장하거나 삭제하는것을 말한다. 
+
+
+
+SpringBoot는 apllication.설정에 아무것도없어도 memory db를 사용한다. (Test에서만 사용)

@@ -7,14 +7,13 @@ import javax.persistence.*;
 
 @Embeddable
 @Getter
-
 public class Money {
 
-    private int bankCount;
+    private Integer bankCount;
 
     protected Money() {
     }
-    public Money(int bankCount) {
+    public Money(Integer bankCount) {
         this.bankCount = bankCount;
     }
 }
