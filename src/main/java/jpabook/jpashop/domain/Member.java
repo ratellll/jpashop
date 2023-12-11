@@ -13,21 +13,17 @@ import java.util.List;
 @Setter
 public class Member {
 
+
+
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
 
     private String name;
 
-    @Embedded // 내장 타입
+    @Embedded
     private Address address;
 
-    @OneToMany(mappedBy = "member") // 읽기 전용
+    @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
-
-    private int size;
-
-    @Embedded // 내장 타입
-    private Money money;
-
 }
