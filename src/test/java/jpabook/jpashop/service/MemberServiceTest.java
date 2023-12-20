@@ -25,6 +25,8 @@ public class MemberServiceTest {
     @Autowired
     EntityManager em;
 
+
+
     @Test
     public void 회원가입() throws Exception{
         //given
