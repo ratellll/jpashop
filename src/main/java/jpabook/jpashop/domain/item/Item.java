@@ -1,11 +1,10 @@
-package jpabook.jpashop.domain.item;
+package jpabook.jpashop.domain;
 
 
-import jakarta.persistence.*;
-import jpabook.jpashop.domain.Category;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,13 +13,11 @@ import java.util.List;
 @DiscriminatorColumn(name = "dtype")
 @Getter
 @Setter
-
 public abstract class Item {
-
 
     @Id
     @GeneratedValue
-    @Column
+    @Column(name = "item_id")
     private Long id;
 
     private String name;
@@ -29,5 +26,7 @@ public abstract class Item {
 
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
+
+
 
 }
