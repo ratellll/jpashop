@@ -15,8 +15,11 @@ public class Delivary {
     @Id
     @GeneratedValue
     @Column(name = "delivery_id")
+    private Long id;
 
+    @OneToOne(mappedBy = "delivery")
     private Order order;
+
 
     @Embedded
     private Address address;

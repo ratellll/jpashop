@@ -1,11 +1,9 @@
 package jpabook.jpashop.domain;
 
 
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +28,10 @@ public class Order {
 
     @OneToOne
     @JoinColumn(name = "delevery_id")
-    private Delivery delivery;
+    private Delivary delivery;
 
     private LocalDateTime orderDate;
 
     @Enumerated(EnumType.STRING)
-    private OrderStatust orderStatust;
+    private OrderStatus orderStatus;
 }
