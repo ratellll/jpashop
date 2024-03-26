@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.web.service.annotation.GetExchange;
 
+import static jakarta.persistence.FetchType.*;
+
 @Entity
 @Getter
 @Setter
@@ -17,7 +19,7 @@ public class Delivary {
     @Column(name = "delivery_id")
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery", fetch = LAZY)
     private Order order;
 
 

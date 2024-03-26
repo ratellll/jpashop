@@ -73,5 +73,10 @@ cascade = CascadeType.DETACH는 영속성 전이중에 DETACH만 전파한다는
 cascade란 연관된 엔티티를 함께 저장하거나 삭제하는것을 말한다. 
 
 
+스프링부트 신규설정 (엔티티(필드) -> 테이블(컬럼))
+1. 카멜케이스 -> 언더스코어 (memberPoint -> member_point)
+2. .(점) -> 언더스코어
+3. 대문자 -> 소문자
+
 
 SpringBoot는 apllication.설정에 아무것도없어도 memory db를 사용한다. (Test에서만 사용)
