@@ -80,3 +80,6 @@ cascade란 연관된 엔티티를 함께 저장하거나 삭제하는것을 말�
 
 
 SpringBoot는 apllication.설정에 아무것도없어도 memory db를 사용한다. (Test에서만 사용)
+
+merge를 사용하는것보단 바꿀필드값을 set으로 잡는게좋다 
+왜냐하면 merge를 사용할때 필드값이 빈값이면 NULL로 강제성업데이트를 하기떄문이다 실무에서 굉장히 위험
