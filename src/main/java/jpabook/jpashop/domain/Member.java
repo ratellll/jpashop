@@ -24,8 +24,10 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 
-    @Column(name = "account")
-    private int account;
+
+    @OneToOne
+    @JoinColumn(name = "account_id")
+    private Account account;
 
 
 }
