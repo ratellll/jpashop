@@ -30,7 +30,7 @@ public class Order {
 
     @OneToOne
     @JoinColumn(name = "delivery_id")
-    private Delivery delivary;
+    private Delivery delivery;
 
     private LocalDateTime orderDate;
 
