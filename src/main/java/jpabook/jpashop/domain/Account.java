@@ -19,7 +19,7 @@ public class Account {
 
     private Long balance;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account",fetch = FetchType.LAZY)
     private Member member;
 
 }
