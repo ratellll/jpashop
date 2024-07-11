@@ -24,7 +24,6 @@ public class Member {
     @OneToMany(mappedBy = "member",cascade = CascadeType.ALL)
     private List<Order> orders = new ArrayList<>();
 
-
     @OneToOne
     @JoinColumn(name = "account_id")
     private Account account;
