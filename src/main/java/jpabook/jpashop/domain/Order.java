@@ -52,7 +52,7 @@ public class Order {
     }
 
     //==생성 메서드==//
-    public static Order createOrder(Member member, Delivery delivery,Account account, OrderItem... orderItems) {
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
         Order order = new Order();
         order.setMember(member);
         order.setDelivery(delivery);
@@ -61,7 +61,7 @@ public class Order {
             totalPrice += orderItem.getOrderPrice();
             order.addOrderItem(orderItem);
         }
-        account.getMember().getAccount().removeBalance(totalPrice);
+        //account.getMember().getAccount().removeBalance(totalPrice);
         order.setTotalPrice(totalPrice);
         order.setOrderDate(LocalDateTime.now());
         order.setStatus(OrderStatus.ORDER);
